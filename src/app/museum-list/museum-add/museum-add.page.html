@@ -1,0 +1,121 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/museums"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Nouveau musée</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <section>
+    <header>Création d'un nouveau véhicule :</header>
+  </section>
+
+  <!-- <form [formGroup]="form" (ngSubmit)="onSubmit()" novalidate> -->
+
+
+  <!-- <ion-item>
+      <ion-label position="floating">Véhicule</ion-label>
+      <ion-input placeholder="Entrez le nom du véhicule" type="text" [(ngModel)]="museum.name"></ion-input>
+    </ion-item> 
+    <ion-item>
+      <ion-label position="floating">Pays de conception</ion-label>
+      <ion-input placeholder="Entrez le pays de conception" type="text" [(ngModel)]="museum.location"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Armenent</ion-label>
+      <ion-input placeholder="Entrez l'armenent" type="text" [(ngModel)]="museum.openingDate"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Fabricant</ion-label>
+      <ion-input placeholder="Entrez le fabricant" type="text" [(ngModel)]="museum.image"></ion-input>
+    </ion-item>
+    <ion-item-divider></ion-item-divider>
+    <ion-item>
+      <ion-label position="floating">Histoire</ion-label>
+      <ion-textarea placeholder="Entrez une description du véhicule ainsi que certains fait historique" rows="20"
+        [(ngModel)]="museum.description"></ion-textarea>
+    </ion-item>
+
+    <ion-row class="text-center">
+      <ion-button color="warning" expand="block" class="w-50">Ajouter</ion-button>
+
+    </ion-row>
+  </form> -->
+
+
+  <form [formGroup]="ionicForm" (ngSubmit)="submitForm()" novalidate>
+
+    <ion-item lines="full">
+      <ion-label position="floating">Name</ion-label>
+      <ion-input formControlName="name" type="text" [(ngModel)]="museum.name"></ion-input>
+    </ion-item>
+    <span class="error ion-padding" *ngIf="isSubmitted && errorControl.name.errors?.required">
+      Name is required.
+    </span>
+    <span class="error ion-padding" *ngIf="isSubmitted && errorControl.openingDate.errors?.maxLength">
+      exceed
+    </span>
+
+    <ion-item lines="full">
+      <ion-label position="floating">location</ion-label>
+      <ion-input formControlName="location" type="text" [(ngModel)]="museum.location"></ion-input>
+    </ion-item>
+    <span class="error ion-padding" *ngIf="isSubmitted && errorControl.location.errors?.required">
+      location is required.
+    </span>
+    <span class="error ion-padding" *ngIf="isSubmitted && errorControl.location.errors?.maxLength">
+      exceed
+    </span>
+    <span class="error ion-padding" *ngIf="isSubmitted && errorControl.openingDate.errors?.minLength">
+      minimal
+    </span>
+
+    
+    <ion-item lines="full">
+      <ion-label position="floating">openingDate</ion-label>
+      <ion-input formControlName="openingDate" type="text" [(ngModel)]="museum.openingDate"></ion-input>
+    </ion-item>
+    <span class="error ion-padding" *ngIf="isSubmitted && errorControl.openingDate.errors?.required">
+      openingDate is required.
+    </span>
+    <span class="error ion-padding" *ngIf="isSubmitted && errorControl.openingDate.errors?.maxLength">
+      exceed
+    </span>
+    <span class="error ion-padding" *ngIf="isSubmitted && errorControl.openingDate.errors?.minLength">
+      minimal
+    </span>
+
+    <ion-item lines="full">
+      <ion-label position="floating">image</ion-label>
+      <ion-input formControlName="image" type="text" [(ngModel)]="museum.image"></ion-input>
+    </ion-item>
+    <span class="error ion-padding" *ngIf="isSubmitted && errorControl.image.errors?.required">
+      Image is required.
+    </span>
+
+    <ion-item>
+      <ion-label position="floating">Description</ion-label>
+      <ion-textarea formControlName="description" placeholder="Entrez une description du véhicule ainsi que certains fait historique" rows="10" [(ngModel)]="museum.description"></ion-textarea>
+    </ion-item>
+
+    <span class="error ion-padding" *ngIf="isSubmitted && errorControl.description.errors?.required">
+      Description is required.
+    </span>
+    <span class="error ion-padding" *ngIf="isSubmitted && errorControl.description.errors?.maxLength">
+      exceed   
+    </span>
+    <span class="error ion-padding" *ngIf="isSubmitted && errorControl.description.errors?.minLength">
+      minimal
+    </span>
+
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" color="warning" expand="block">Submit</ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-content>
+
+<!-- <ion-button color="warning" expand="block" class="w-50" (click)="add()">Ajouter</ion-button> -->

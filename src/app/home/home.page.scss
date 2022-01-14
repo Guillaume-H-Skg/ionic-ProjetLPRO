@@ -1,0 +1,120 @@
+#container {
+  text-align: center;
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#container strong {
+  font-size: 20px;
+  line-height: 26px;
+}
+
+#container p {
+  font-size: 16px;
+  line-height: 22px;
+
+  color: #8c8c8c;
+
+  margin: 0;
+}
+
+#container a {
+  text-decoration: none;
+}
+
+.bg-fond {
+  background: url("../../assets/img/bg-home3.png") no-repeat center center/cover, rgba(0,0,0,0.3);
+  text-align: center;
+  background-position: center;
+  height: 35vh;
+  margin: 0;
+  padding: 20px;
+  color: white;
+}
+
+.bg-fond2 {
+  background: url("../../assets/img/bg-jumboV.png") no-repeat center center/cover, rgba(0,0,0,0.3);
+  text-align: center;
+  background-position: center;
+  height: 35vh;
+  margin: 0;
+  padding: 20px;
+  color: white;
+}
+
+.bg-fond3 {
+  background: url("../../assets/img/bg-cardKoubinka.png") no-repeat center center/cover, rgba(0,0,0,0.3);
+  text-align: center;
+  background-position: center;
+  height: 35vh;
+  margin: 0;
+  padding: 20px;
+  color: white;
+}
+// .w-max {
+//   max-width: 500px;
+// }
+
+.roundedCard {
+  text-align: center;  
+  width: 100%;
+  height: 100%;
+  padding: 2rem;
+}
+
+.imgK{
+  background: url("../../assets/img/bg-cardKoubinka.png") no-repeat center center/cover, rgba(0,0,0,0.3);
+}
+
+.imgB{
+  background: url("../../assets/img/bg-cardBovington.png") no-repeat center center/cover, rgba(0,0,0,0.3);
+}
+
+.imgS{
+  background: url("../../assets/img/bg-cardSaumur.png") no-repeat center center/cover, rgba(0,0,0,0.3);
+}
+
+.roundedV {
+  border-radius: 5px;
+  text-align: center;
+  background: url("../../assets/img/bg-jumboV.png") no-repeat center center/cover, rgba(0,0,0,0.3);
+  padding: 2rem;
+  margin: 0.5rem;
+}
+
+.roundedM {
+  border-radius: 5px;
+  text-align: center;
+  background: url("../../assets/img/bg-jumboM.png") no-repeat center center/cover, rgba(0,0,0,0.3);
+  padding: 2rem;
+  margin: 0.5rem;
+}
+
+
+
+.w-min {
+  min-width: 400px;
+  min-height: 300px;
+}
+
+.w-max {
+  max-width: 1000px;
+  max-height: 300px;
+}
+
+.fullscreen {
+  width: 100%;
+  height: 100%;
+}
+
+h3 {
+  margin-bottom: 2em;color:white;
+}
+
+.text-center{
+  text-align: center;
+}

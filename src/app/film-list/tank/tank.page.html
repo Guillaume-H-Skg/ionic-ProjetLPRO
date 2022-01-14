@@ -1,0 +1,150 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tab/tanks"></ion-back-button>
+    </ion-buttons>
+    <ion-title *ngIf="tank">Information sur {{tank.name}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <section>
+    <ion-button color="warning" class="w-50" expand="block" (click)="setModif()">
+      Rendre Modifiable
+      <ion-icon slot="end" name="create"></ion-icon>
+    </ion-button>
+
+  </section>
+
+
+
+
+  <div *ngIf="!modif">
+    <ion-grid *ngIf="tank">
+      <ion-row>
+        <ion-col>
+
+          <ion-label>En exposition : </ion-label>
+          <ion-icon *ngIf="tank.available" item-start name="checkmark"></ion-icon>
+          <ion-icon *ngIf="!tank.available" item-start name="close-circle"></ion-icon>
+
+        </ion-col>
+        <ion-col>
+
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="6">
+          <img [src]="tank.pictureLink">
+        </ion-col>
+        <ion-col size="6">
+          <div class="mb-1">
+            <ion-text>Véhicule : </ion-text>
+            <strong>{{tank.name}}</strong><br>
+          </div>
+          <div class="mb-1">
+            <ion-text>Pays : </ion-text>
+            <strong>{{tank.country}}</strong> <br>
+          </div>
+          <div class="mb-1">
+            <ion-text>Quantité : </ion-text>
+            <strong>{{tank.amount}}</strong> <br>
+          </div>
+          <div class="mb-1">
+            <ion-text>Fabricant : </ion-text>
+            <strong>{{tank.manufacturer}}</strong> <br>
+          </div>
+          <div class="mb-1">
+            <ion-text>Catégories : </ion-text>
+            <strong>{{tank.role}}</strong> <br>
+          </div>
+
+          <!-- <strong>En exposition :</strong>
+          {{tank.available}} <br> -->
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <ion-text>Mise en service : </ion-text>
+          <strong>{{tank.releaseDate}}</strong>
+        </ion-col>
+        <ion-col>
+          <ion-text>Année de service : </ion-text>
+          <strong>{{tank.time}}</strong>
+        </ion-col>
+      </ion-row>
+      <ion-item-divider>
+      </ion-item-divider>
+      <ion-row>
+        <ion-col>
+          <strong>Histoire</strong> <br>
+          <p>
+            {{tank.history}}
+          </p>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-button color="danger" (click)="onDelete(tank.id)" class="w-50" expand="block">
+          supprimer
+          <ion-icon name="trash"></ion-icon>
+        </ion-button>
+      </ion-row>
+    </ion-grid>
+  </div>
+  <div *ngIf="modif && tank">
+    <ion-item>
+      <ion-label position="floating">Véhicule</ion-label>
+      <ion-input placeholder="Entrez le nom du véhicule" type="text" [(ngModel)]="tank.name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Pays de conception</ion-label>
+      <ion-input placeholder="Entrez le pays de conception" type="text" [(ngModel)]="tank.country"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Armenent</ion-label>
+      <ion-input placeholder="Entrez l'armenent" type="text" [(ngModel)]="tank.gun"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Fabricant</ion-label>
+      <ion-input placeholder="Entrez le fabricant" type="text" [(ngModel)]="tank.manufacturer"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Quantité produite</ion-label>
+      <ion-input placeholder="Entrez la quantité produite" type="text" [(ngModel)]="tank.amount"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Date de mise en service</ion-label>
+      <ion-input placeholder="Entrez la date de mise en service" type="text" [(ngModel)]="tank.releaseDate"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Illustration</ion-label>
+      <ion-input placeholder="Entrez le lien d'une illustration" type="text" [(ngModel)]="tank.pictureLink"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Catégories</ion-label>
+      <ion-input placeholder="Entrez le type de véhicule" type="text" [(ngModel)]="tank.role"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Nombre d'année de service</ion-label>
+      <ion-input placeholder="Entrez le nombre d'année de service" type="text" [(ngModel)]="tank.time"></ion-input>
+    </ion-item>
+    <ion-item-divider></ion-item-divider>
+    <ion-item>
+      <ion-label>En exposition : (oui ou non)</ion-label>
+      <ion-toggle [(ngModel)]="tank.available"></ion-toggle>
+    </ion-item>
+    <ion-item-divider></ion-item-divider>
+    <ion-item>
+      <ion-label position="floating">Histoire</ion-label>
+      <ion-textarea placeholder="Entrez une description du véhicule ainsi que certains fait historique" rows="20" [(ngModel)]="tank.history"></ion-textarea>
+    </ion-item>
+  
+    <ion-row class="text-center">
+      <ion-button color="warning" expand="block" class="w-50" (click)="onModif()">Modifier</ion-button>
+  
+    </ion-row>
+
+  </div>
+</ion-content>

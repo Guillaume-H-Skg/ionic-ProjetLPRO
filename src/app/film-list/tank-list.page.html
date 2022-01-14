@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Liste des véhicules</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="dark">
+
+
+  <section>
+    
+    <header>Création d'un nouveau véhicule :</header>
+    <ion-button  color="warning" class="w-50" routerLink="/tab/tanks/new" expand="block">
+      Création
+      <ion-icon slot="end" name="add-circle-outline"></ion-icon>
+   </ion-button>
+  </section>
+  
+  
+  <ion-grid>
+    <ion-row>
+      <ion-col *ngFor="let tank of tanks">
+        <ion-card [routerLink]="['/tab/tanks', tank.id]">
+          <img [src]="tank.pictureLink" [alt]="tank.title">
+          <ion-card-header> 
+            
+            <ion-card-title>{{tank.name}}</ion-card-title>
+            <ion-card-subtitle>Description</ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            
+            {{tank.history}}
+          </ion-card-content>
+          
+          <ion-item>
+            <ion-icon slot="start" *ngIf="tank.available" name="eye-outline"></ion-icon>
+            <ion-icon slot="start" *ngIf="!tank.available" name="eye-off-outline"></ion-icon>
+           
+            <ion-label>Rôle : {{tank.role}}</ion-label>
+       
+            <ion-button color="warning" fill="outline" slot="end">Voir</ion-button>
+          </ion-item>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+  
+</ion-content>
+
+
+
+<!-- <ion-footer>
+  Pied de page
+</ion-footer> -->
