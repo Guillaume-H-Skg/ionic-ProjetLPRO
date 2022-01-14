@@ -9,38 +9,40 @@
 
 <ion-content>
   <section>
-    <header>Création d'un nouveau véhicule :</header>
+    <header>Création d'un nouveau musée :</header>
   </section>
+  
+
+  <!-- Formulaire sans validation -->
+
+
 
   <!-- <form [formGroup]="form" (ngSubmit)="onSubmit()" novalidate> -->
-
-
   <!-- <ion-item>
-      <ion-label position="floating">Véhicule</ion-label>
-      <ion-input placeholder="Entrez le nom du véhicule" type="text" [(ngModel)]="museum.name"></ion-input>
+      <ion-label position="floating">Musée</ion-label>
+      <ion-input placeholder="Entrez le nom du Musée" type="text" [(ngModel)]="museum.name"></ion-input>
     </ion-item> 
     <ion-item>
-      <ion-label position="floating">Pays de conception</ion-label>
-      <ion-input placeholder="Entrez le pays de conception" type="text" [(ngModel)]="museum.location"></ion-input>
+      <ion-label position="floating">Emplacement</ion-label>
+      <ion-input placeholder="Entrez l'emplacement" type="text" [(ngModel)]="museum.location"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label position="floating">Armenent</ion-label>
-      <ion-input placeholder="Entrez l'armenent" type="text" [(ngModel)]="museum.openingDate"></ion-input>
+      <ion-label position="floating">Nombre jour d'ouvert</ion-label>
+      <ion-input placeholder="Entrez le nombre jour d'ouvert" type="text" [(ngModel)]="museum.openingDate"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label position="floating">Fabricant</ion-label>
-      <ion-input placeholder="Entrez le fabricant" type="text" [(ngModel)]="museum.image"></ion-input>
+      <ion-label position="floating">Image</ion-label>
+      <ion-input placeholder="Entrez l'Image" type="text" [(ngModel)]="museum.image"></ion-input>
     </ion-item>
     <ion-item-divider></ion-item-divider>
     <ion-item>
-      <ion-label position="floating">Histoire</ion-label>
+      <ion-label position="floating">Description</ion-label>
       <ion-textarea placeholder="Entrez une description du véhicule ainsi que certains fait historique" rows="20"
         [(ngModel)]="museum.description"></ion-textarea>
     </ion-item>
 
     <ion-row class="text-center">
-      <ion-button color="warning" expand="block" class="w-50">Ajouter</ion-button>
-
+      <ion-button color="warning" expand="block" class="w-50" (click)="add()">Ajouter</ion-button>
     </ion-row>
   </form> -->
 
@@ -48,8 +50,8 @@
   <form [formGroup]="ionicForm" (ngSubmit)="submitForm()" novalidate>
 
     <ion-item lines="full">
-      <ion-label position="floating">Name</ion-label>
-      <ion-input formControlName="name" type="text" [(ngModel)]="museum.name"></ion-input>
+      <ion-label position="floating">Musée</ion-label>
+      <ion-input placeholder="Entrez le nom du Musée" formControlName="name" type="text" [(ngModel)]="museum.name"></ion-input>
     </ion-item>
     <span class="error ion-padding" *ngIf="isSubmitted && errorControl.name.errors?.required">
       Name is required.
@@ -59,8 +61,8 @@
     </span>
 
     <ion-item lines="full">
-      <ion-label position="floating">location</ion-label>
-      <ion-input formControlName="location" type="text" [(ngModel)]="museum.location"></ion-input>
+      <ion-label position="floating">Emmplacement</ion-label>
+      <ion-input placeholder="Entrez l'emplacement" formControlName="location" type="text" [(ngModel)]="museum.location"></ion-input>
     </ion-item>
     <span class="error ion-padding" *ngIf="isSubmitted && errorControl.location.errors?.required">
       location is required.
@@ -74,8 +76,8 @@
 
     
     <ion-item lines="full">
-      <ion-label position="floating">openingDate</ion-label>
-      <ion-input formControlName="openingDate" type="text" [(ngModel)]="museum.openingDate"></ion-input>
+      <ion-label position="floating">Nombre de jours ouvert</ion-label>
+      <ion-input placeholder="Entrez le nombre de jours ouvert" formControlName="openingDate" type="text" [(ngModel)]="museum.openingDate"></ion-input>
     </ion-item>
     <span class="error ion-padding" *ngIf="isSubmitted && errorControl.openingDate.errors?.required">
       openingDate is required.
@@ -89,7 +91,7 @@
 
     <ion-item lines="full">
       <ion-label position="floating">image</ion-label>
-      <ion-input formControlName="image" type="text" [(ngModel)]="museum.image"></ion-input>
+      <ion-input placeholder="Entrez une image (URL)" formControlName="image" type="text" [(ngModel)]="museum.image"></ion-input>
     </ion-item>
     <span class="error ion-padding" *ngIf="isSubmitted && errorControl.image.errors?.required">
       Image is required.
@@ -97,7 +99,7 @@
 
     <ion-item>
       <ion-label position="floating">Description</ion-label>
-      <ion-textarea formControlName="description" placeholder="Entrez une description du véhicule ainsi que certains fait historique" rows="10" [(ngModel)]="museum.description"></ion-textarea>
+      <ion-textarea placeholder="Entrez une description du musée" formControlName="description" placeholder="Entrez une description du véhicule ainsi que certains fait historique" rows="10" [(ngModel)]="museum.description"></ion-textarea>
     </ion-item>
 
     <span class="error ion-padding" *ngIf="isSubmitted && errorControl.description.errors?.required">
@@ -112,10 +114,9 @@
 
     <ion-row>
       <ion-col>
-        <ion-button type="submit" color="warning" expand="block">Submit</ion-button>
+        <ion-button type="submit" color="warning" expand="block">Ajouter</ion-button>
       </ion-col>
     </ion-row>
   </form>
 </ion-content>
 
-<!-- <ion-button color="warning" expand="block" class="w-50" (click)="add()">Ajouter</ion-button> -->

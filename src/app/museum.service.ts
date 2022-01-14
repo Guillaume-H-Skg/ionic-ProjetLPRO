@@ -10,8 +10,6 @@ import { map } from 'rxjs/operators';
 export class MuseumService {
   museumsRef: AngularFirestoreCollection<Museum>;
   private dbPath = '/museums';
-  // angForm: FormGroup;
-  // submitted = false;
   constructor(
     private db: AngularFirestore,
   ) {this.museumsRef = db.collection(this.dbPath);

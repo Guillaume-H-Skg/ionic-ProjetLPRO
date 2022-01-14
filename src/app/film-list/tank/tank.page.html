@@ -13,11 +13,7 @@
       Rendre Modifiable
       <ion-icon slot="end" name="create"></ion-icon>
     </ion-button>
-
   </section>
-
-
-
 
   <div *ngIf="!modif">
     <ion-grid *ngIf="tank">
@@ -59,9 +55,6 @@
             <ion-text>Catégories : </ion-text>
             <strong>{{tank.role}}</strong> <br>
           </div>
-
-          <!-- <strong>En exposition :</strong>
-          {{tank.available}} <br> -->
         </ion-col>
       </ion-row>
 
@@ -142,7 +135,7 @@
     </ion-item>
   
     <ion-row class="text-center">
-      <ion-button color="warning" expand="block" class="w-50" (click)="onModif()">Modifier</ion-button>
+      <ion-button color="warning" expand="block" class="w-50" (click)="onModif()">Editer</ion-button>
   
     </ion-row>
 

@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      <img src="../assets/img/logo.png" width="70" height="25" alt="logo">
+      <img src="../assets/img/logo.png" width="70" height="25" alt="logo" margin="auto">
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -12,19 +12,19 @@
     <ion-slide class="bg-fond">
       <div>
         <h3>Découvrez les musée des blindées du monde entier !</h3>
-        <ion-button color="warning" routerLink="tanks">En savoir plus</ion-button>
+        <ion-button color="warning" routerLink="../tanks">En savoir plus</ion-button>
       </div>
     </ion-slide>
     <ion-slide class="bg-fond2">
       <div>
         <h3>Consultez la liste des blindées en exposition !</h3>
-        <ion-button color="warning" routerLink="tanks">En savoir plus</ion-button>
+        <ion-button color="warning" routerLink="../tanks">En savoir plus</ion-button>
       </div>
     </ion-slide>
     <ion-slide class="bg-fond3">
       <div>
         <h3>Consultez la liste des musées !</h3>
-        <ion-button color="warning" routerLink="tanks">En savoir plus</ion-button>
+        <ion-button color="warning" routerLink="../museums">En savoir plus</ion-button>
       </div>
     </ion-slide>
   </ion-slides>
@@ -33,11 +33,8 @@
     <ion-row class="text-center">
       <h2>Les derniers musées ajouté à notre liste</h2>
     </ion-row>
-
     <ion-row>
-
       <ion-col>
-
         <ion-card>
           <div class="roundedCard imgK">
             <h3>Musée des blindés de Koubinka</h3>
@@ -51,19 +48,17 @@
             chars au monde.
           </ion-card-content>
           <ion-item>
-
             <ion-chip>
               <ion-icon color="dark" name="location-outline"></ion-icon>
               <ion-label>Russie</ion-label>
             </ion-chip>
             <ion-chip slot="end">
               <ion-icon color="dark" name="calendar-outline"></ion-icon>
-              <ion-label>6 - 7</ion-label>
+              <ion-label>4 - 7</ion-label>
             </ion-chip>
           </ion-item>
         </ion-card>
       </ion-col>
-
       <ion-col>
         <ion-card>
           <div class="roundedCard imgB">
@@ -73,15 +68,12 @@
             <ion-card-subtitle>Description</ion-card-subtitle>
           </ion-card-header>
           <ion-card-content>
-            Le musée des Blindés de Koubinka est un musée de véhicules blindés situé à Koubinka à 63 km à l'ouest de
-            Moscou à côté d'une base aérienne et spatiale, ouvert en 1978. Il renferme la plus grande collection de
-            chars au monde.
+            Le musée des Blindés de Bovington est un musée militaire britannique situé dans le camp militaire de Bovington. Créé en 1947, le musée présente une des plus importantes collections de véhicules blindés d'Europe, avec presque trois cents véhicules de vingt-six pays. Celle-ci comprend notamment le seul char allemand Tigre I en état de marche et un char britannique Mark I de la Première Guerre mondiale qui est le plus vieux char d'assaut conservé de nos jours. 
           </ion-card-content>
           <ion-item>
-
             <ion-chip>
               <ion-icon color="dark" name="location-outline"></ion-icon>
-              <ion-label>Russie</ion-label>
+              <ion-label>Royaume-Uni</ion-label>
             </ion-chip>
             <ion-chip slot="end">
               <ion-icon color="dark" name="calendar-outline"></ion-icon>
@@ -90,7 +82,6 @@
           </ion-item>
         </ion-card>
       </ion-col>
-
       <ion-col>
         <ion-card>
           <div class="roundedCard imgS">
@@ -100,19 +91,17 @@
             <ion-card-subtitle>Description</ion-card-subtitle>
           </ion-card-header>
           <ion-card-content>
-            Le musée des Blindés de Koubinka est un musée de véhicules blindés situé à Koubinka à 63 km à l'ouest de
-            Moscou à côté d'une base aérienne et spatiale, ouvert en 1978. Il renferme la plus grande collection de
-            chars au monde.
+            Le musée des Blindés de Saumur ou musée des Blindés Général-Estienne est un musée de véhicules blindés situé à Saumur.
+            Inauguré en 1977 dans les anciens hangars du clos Beaufort, le musée déménage en 1996 au no 1043 de la route de Fontevraud, dans des locaux rachetés à la SEITA et remis à neuf par le ministère de la Défense.
           </ion-card-content>
           <ion-item>
-
             <ion-chip>
               <ion-icon color="dark" name="location-outline"></ion-icon>
-              <ion-label>Russie</ion-label>
+              <ion-label>France</ion-label>
             </ion-chip>
             <ion-chip slot="end">
               <ion-icon color="dark" name="calendar-outline"></ion-icon>
-              <ion-label>6 - 7</ion-label>
+              <ion-label>5 - 7</ion-label>
             </ion-chip>
           </ion-item>
         </ion-card>
@@ -125,34 +114,19 @@
       <h2>Consultez la liste des différents véhicules et musées !</h2>
     </ion-row>
     <ion-row>
-
       <ion-col>
         <div class="roundedV">
           <h3>Liste des véhicules</h3>
-          <ion-button color="warning">En savoir plus</ion-button>
-
+          <ion-button routerLink="../tanks" color="warning">En savoir plus</ion-button>
         </div>
       </ion-col>
       <ion-col>
         <div class="roundedM">
           <h3>Liste des musées</h3>
-          <ion-button color="warning">En savoir plus</ion-button>
-
+          <ion-button routerLink="../museums" color="warning">En savoir plus</ion-button>
         </div>
       </ion-col>
     </ion-row>
   </ion-grid>
 
 </ion-content>
-
-
-
-
-<!-- <ion-content [fullscreen]="true">
-  <ion-button routerLink="/film-list">Film List</ion-button>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
-</ion-content> -->

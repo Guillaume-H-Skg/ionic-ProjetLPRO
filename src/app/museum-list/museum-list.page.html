@@ -5,51 +5,38 @@
 </ion-header>
 
 <ion-content color="dark" [scrollEvents]="true">
-
-
   <section>
-    
     <header>Création d'un nouveau musée :</header>
-    <ion-button  color="warning" class="w-50" routerLink="/tab/museums/add" expand="block">
+    <ion-button color="warning" class="w-50" routerLink="/tab/museums/add" expand="block">
       Création
       <ion-icon slot="end" name="add-circle-outline"></ion-icon>
-   </ion-button>
+    </ion-button>
   </section>
-
-
-
- <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-  <ion-fab-button color="warning" (click)="scrollToBottom()">
-    <ion-icon name="chevron-down-outline"></ion-icon>
-  </ion-fab-button>
-</ion-fab>
-
-<ion-fab vertical="bottom" horizontal="start" slot="fixed">
-  <ion-fab-button color="warning" (click)="scrollToTop()">
-    <ion-icon name="chevron-up-outline"></ion-icon>
-  </ion-fab-button>
-</ion-fab>
-  
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button color="warning" (click)="scrollToBottom()">
+      <ion-icon name="chevron-down-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <ion-fab vertical="bottom" horizontal="start" slot="fixed">
+    <ion-fab-button color="warning" (click)="scrollToTop()">
+      <ion-icon name="chevron-up-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
   <ion-grid>
     <ion-row>
       <ion-col *ngFor="let museum of museums">
         <ion-card [routerLink]="['/tab/museums', museum.id]">
           <img [src]="museum.image" [alt]="museum.title">
-          <ion-card-header> 
-            
+          <ion-card-header>
             <ion-card-title>{{museum.name}}</ion-card-title>
             <ion-card-subtitle>Description</ion-card-subtitle>
           </ion-card-header>
           <ion-card-content>
-            
             {{museum.description}}
           </ion-card-content>
-          
           <ion-item>
             <ion-icon slot="start" name="pin"></ion-icon>
-
             <ion-label>Lieu : {{museum.location}}</ion-label>
-       
             <ion-button color="warning" fill="outline" slot="end">Voir</ion-button>
           </ion-item>
         </ion-card>
@@ -57,12 +44,7 @@
     </ion-row>
   </ion-grid>
 
-
-  
 </ion-content>
 
 
 
-<!-- <ion-footer>
-  Pied de page
-</ion-footer> -->

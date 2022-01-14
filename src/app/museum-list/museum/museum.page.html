@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="/tab/tanks"></ion-back-button>
+      <ion-back-button defaultHref="/tab/museums"></ion-back-button>
     </ion-buttons>
     <ion-title *ngIf="museum">Information sur {{museum.name}}</ion-title>
   </ion-toolbar>
@@ -21,37 +21,35 @@
 
   <div *ngIf="!modif">
     <ion-grid *ngIf="museum">
-
+      <ion-row>
+        <img [src]="museum.image">
+      </ion-row>
 
       <ion-row>
-        <ion-col size="6">
-          <img [src]="museum.image">
-        </ion-col>
-        <ion-col size="6">
-          <div class="mb-1">
-            <ion-text>Véhicule : </ion-text>
-            <strong>{{museum.name}}</strong><br>
-          </div>
-          <div class="mb-1">
-            <ion-text>Pays : </ion-text>
-            <strong>{{museum.location}}</strong> <br>
-          </div>
-          <div class="mb-1">
-            <ion-text>Quantité : </ion-text>
-            <strong>{{museum.openingDate}}</strong> <br>
-          </div>
-          
-
-          <!-- <strong>En exposition :</strong>
-          {{tank.available}} <br> -->
-        </ion-col>
+        <div class="my-1">
+          <ion-text>Musée : </ion-text>
+          <strong>{{museum.name}}</strong><br>
+        </div>
       </ion-row>
+      <ion-row>
+        <div class="mb-1">
+          <ion-text>Emplacement : </ion-text>
+          <strong>{{museum.location}}</strong> <br>
+        </div>
+      </ion-row>
+      <ion-row>
+        <div class="mb-1">
+          <ion-text>Nombre de jours ouvert : </ion-text>
+          <strong>{{museum.openingDate}}</strong> <br>
+        </div>
+      </ion-row>
+
 
       <ion-item-divider>
       </ion-item-divider>
       <ion-row>
         <ion-col>
-          <strong>Histoire</strong> <br>
+          <strong>Description</strong> <br>
           <p>
             {{museum.description}}
           </p>
@@ -68,33 +66,34 @@
 
   <div *ngIf="modif && museum">
     <ion-item>
-      <ion-label position="floating">Véhicule</ion-label>
-      <ion-input placeholder="Entrez le nom du véhicule" type="text" [(ngModel)]="museum.name"></ion-input>
+      <ion-label position="floating">Musée</ion-label>
+      <ion-input placeholder="Entrez le nom du musée" type="text" [(ngModel)]="museum.name"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label position="floating">Pays de conception</ion-label>
-      <ion-input placeholder="Entrez le pays de conception" type="text" [(ngModel)]="museum.location"></ion-input>
+      <ion-label position="floating">Emplacement</ion-label>
+      <ion-input placeholder="Entrez l'emplacement" type="text" [(ngModel)]="museum.location"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label position="floating">Armenent</ion-label>
-      <ion-input placeholder="Entrez l'armenent" type="text" [(ngModel)]="museum.openingDate"></ion-input>
+      <ion-label position="floating">Nombre de jours ouvert</ion-label>
+      <ion-input placeholder="Entrez le nombre de jours ouvert" type="text" [(ngModel)]="museum.openingDate"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label position="floating">Fabricant</ion-label>
-      <ion-input placeholder="Entrez le fabricant" type="text" [(ngModel)]="museum.image"></ion-input>
+      <ion-label position="floating">Image</ion-label>
+      <ion-input placeholder="Entrez l'image" type="text" [(ngModel)]="museum.image"></ion-input>
     </ion-item>
     <ion-item-divider></ion-item-divider>
     <ion-item>
-      <ion-label position="floating">Histoire</ion-label>
-      <ion-textarea placeholder="Entrez une description du véhicule ainsi que certains fait historique" rows="20" [(ngModel)]="museum.description"></ion-textarea>
+      <ion-label position="floating">Description</ion-label>
+      <ion-textarea placeholder="Entrez une description du véhicule ainsi que certains fait historique" rows="20"
+        [(ngModel)]="museum.description"></ion-textarea>
     </ion-item>
-  
+
     <ion-row class="text-center">
-      <ion-button color="warning" expand="block" class="w-50" (click)="onModif()">Ajouter</ion-button>
-  
+      <ion-button color="warning" expand="block" class="w-50" (click)="onModif()">Editer</ion-button>
+
     </ion-row>
   </div>
 
 
-  
+
 </ion-content>

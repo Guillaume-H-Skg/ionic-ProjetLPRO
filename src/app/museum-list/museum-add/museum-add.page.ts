@@ -14,14 +14,9 @@ import { FormGroup, FormBuilder, Validators, FormControl, AbstractControl } from
   styleUrls: ['./museum-add.page.scss'],
 })
 export class MuseumAddPage implements OnInit {
-  // form: FormGroup;
-  // submitted = false;
   ionicForm: FormGroup;
   isSubmitted = false;
-  //ionicForm: FormGroup;
-  //isSubmitted = false;
-
-  public museum!: Museum;
+  public museum?: Museum;
 
   constructor(
     // eslint-disable-next-line @typescript-eslint/naming-convention
@@ -29,35 +24,36 @@ export class MuseumAddPage implements OnInit {
     private toastCtrl: ToastController,
     private router: Router,
     public formBuilder: FormBuilder
-  ) {this.ionicForm = this.formBuilder.group(
-    {
-      name: ['', [
-        Validators.required,
-        Validators.maxLength(30)]
-      ],
-      location: ['', [
-        Validators.required,
-        Validators.maxLength(25),
-        Validators.minLength(3)]
-      ],
-      openingDate: ['', [
-        Validators.required,
-        Validators.maxLength(25),
-        Validators.minLength(3)]
-      ],
-      image: ['',
-        Validators.required,
-      ],
-      description: ['', [
-        Validators.required,
-        Validators.maxLength(500),
-        Validators.minLength(50)]
-      ],
-    }
-  );
-}
+  ) {
+    this.ionicForm = this.formBuilder.group(
+      {
+        name: ['', [
+          Validators.required,
+          Validators.maxLength(30)]
+        ],
+        location: ['', [
+          Validators.required,
+          Validators.maxLength(25),
+          Validators.minLength(3)]
+        ],
+        openingDate: ['', [
+          Validators.required,
+          Validators.maxLength(25),
+          Validators.minLength(3)]
+        ],
+        image: ['',
+          Validators.required,
+        ],
+        description: ['', [
+          Validators.required,
+          Validators.maxLength(500),
+          Validators.minLength(50)]
+        ],
+      }
+    );
+  }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.museum = new Museum();
   }
 
@@ -73,27 +69,29 @@ export class MuseumAddPage implements OnInit {
     });
   }
 
-  get errorControl() {
+  get errorControl(): { [key: string]: AbstractControl}{
     return this.ionicForm.controls;
   }
 
-  submitForm() {
+  submitForm(): void {
     this.isSubmitted = true;
     if (!this.ionicForm.valid) {
-      console.log('Please provide all the required values!');
-      return false;
-    } else {
-        // this.presentToast();
-        this.Museum.saveNewMuseum(this.museum).subscribe(() => {
-        this.museum = new Museum();
-      });
+      console.log('Erreur, saisie invalide');
+      return;
     }
+    this.Museum.saveNewMuseum(this.museum).subscribe(() => {
+      this.museum = new Museum(); //On peut supprimer l'erreur NG0100 en enlevant cet ligne (déconseillé)
+      this.presentToast();
+    });
   }
+}
+
+//Ancienne fonction pour ajouter un nouveau musée
   // add() {
   //   this.Museum.saveNewMuseum(this.museum).subscribe(() => {
-  //     this.museum = new Museum();//Tank
+  //     this.museum = new Museum();
   //     this.presentToast();
   //   });
   // }
 
-}
+

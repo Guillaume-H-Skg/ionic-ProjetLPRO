@@ -5,10 +5,7 @@
 </ion-header>
 
 <ion-content color="dark">
-
-
   <section>
-    
     <header>Création d'un nouveau véhicule :</header>
     <ion-button  color="warning" class="w-50" routerLink="/tab/tanks/new" expand="block">
       Création
@@ -16,6 +13,17 @@
    </ion-button>
   </section>
   
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button color="warning" (click)="scrollToBottom()">
+      <ion-icon name="chevron-down-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  
+  <ion-fab vertical="bottom" horizontal="start" slot="fixed">
+    <ion-fab-button color="warning" (click)="scrollToTop()">
+      <ion-icon name="chevron-up-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
   
   <ion-grid>
     <ion-row>
@@ -43,14 +51,5 @@
         </ion-card>
       </ion-col>
     </ion-row>
-  </ion-grid>
-
-
-  
+  </ion-grid>  
 </ion-content>
-
-
-
-<!-- <ion-footer>
-  Pied de page
-</ion-footer> -->

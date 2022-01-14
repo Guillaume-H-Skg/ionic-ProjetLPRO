@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AlertController, ToastController } from '@ionic/angular';
 import { MuseumService } from 'src/app/museum.service';
+import { FormGroup, FormBuilder, Validators, FormControl, AbstractControl } from '@angular/forms';
 
 
 @Component({
@@ -13,7 +14,7 @@ export class MuseumPage implements OnInit {
 
   modif!: boolean;
   museum: any = null;
-
+  // public formBuilder: FormBuilder;
   constructor(
     private alertCtrl: AlertController,
     private route: ActivatedRoute,
@@ -21,7 +22,34 @@ export class MuseumPage implements OnInit {
     private Museum: MuseumService,
     private toastCtrl: ToastController,
     private router: Router
-  ) { }
+  ) {
+  //   this.ionicForm = this.formBuilder.group(
+  //   {
+  //     name: ['', [
+  //       Validators.required,
+  //       Validators.maxLength(30)]
+  //     ],
+  //     location: ['', [
+  //       Validators.required,
+  //       Validators.maxLength(25),
+  //       Validators.minLength(3)]
+  //     ],
+  //     openingDate: ['', [
+  //       Validators.required,
+  //       Validators.maxLength(25),
+  //       Validators.minLength(3)]
+  //     ],
+  //     image: ['',
+  //       Validators.required,
+  //     ],
+  //     description: ['', [
+  //       Validators.required,
+  //       Validators.maxLength(500),
+  //       Validators.minLength(50)]
+  //     ],
+  //   }
+  // );
+}
 
   ngOnInit() {
     this.modif = false;
