@@ -14,7 +14,7 @@ const routes: Routes = [
   },
   {
     path: ':id',
-    loadChildren: () => import('./tank/tank.module').then( m => m.TankPageModule)
+    loadChildren: () => import('../tank-list/tank/tank.module').then( m => m.TankPageModule)
   }
 ];
 

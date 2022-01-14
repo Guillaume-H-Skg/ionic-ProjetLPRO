@@ -21,7 +21,4 @@ logique est tout de même en commentaire dans les fichiers .ts des parties conce
 <br> 
 La fonctionnalité photos a été mise en place ainsi qu'un bouton share (dans la partie photo)
 malheureusement les photos ne sont sauvegardé dans firebase.
-<br>
-Un fichier film-list persiste, le renommer/supprimer m'est impossible.
-
 

@@ -12,7 +12,7 @@ const routes: Routes = [
     children: [
       {
         path: 'tanks',
-        loadChildren: () => import('../film-list/tank-list.module').then(m => m.TankListPageModule),
+        loadChildren: () => import('../tank-list/tank-list.module').then(m => m.TankListPageModule),
 
       },
       {
