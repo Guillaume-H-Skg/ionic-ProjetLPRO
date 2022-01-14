@@ -20,5 +20,5 @@ Une gestions des erreurs pour le formulaire création d'un musée a été faites
 logique est tout de même en commentaire dans les fichiers .ts des parties concernés.
 <br> 
 La fonctionnalité photos a été mise en place ainsi qu'un bouton share (dans la partie photo)
-malheureusement les photos ne sont sauvegardé dans firebase.
+malheureusement les photos ne sont pas sauvegardé dans firebase.
 
