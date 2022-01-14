@@ -22,6 +22,8 @@ export class MuseumPage implements OnInit {
     private Museum: MuseumService,
     private toastCtrl: ToastController,
     private router: Router
+    // public formBuilder: FormBuilder
+
   ) {
   //   this.ionicForm = this.formBuilder.group(
   //   {
@@ -101,4 +103,7 @@ export class MuseumPage implements OnInit {
     this.router.navigate(['/tab/museums']);
   }
 
+  // get errorControl(): { [key: string]: AbstractControl}{
+  //   return this.ionicForm.controls;
+  // }
 }

@@ -59,7 +59,7 @@ export class MuseumAddPage implements OnInit {
 
   async presentToast() {
     const toast = this.toastCtrl.create({
-      message: 'Nouveau Tank enregistré',
+      message: 'Nouveau musée enregistré',
       duration: 2000
     });
     (await toast).present().then(() => {

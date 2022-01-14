@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { ToastController } from '@ionic/angular';
 import { Tank } from 'src/app/models/tanks.model';
 import { TankService } from 'src/app/tank.service';
+import { FormGroup, FormBuilder, Validators, FormControl, AbstractControl } from '@angular/forms';
 
 @Component({
   selector: 'app-tank-new',
@@ -12,13 +13,68 @@ import { TankService } from 'src/app/tank.service';
 })
 export class TankNewPage implements OnInit {
   public tank!: Tank;
+  // public formBuilder: FormBuilder;
 
   constructor(
     // eslint-disable-next-line @typescript-eslint/no-shadow
     private Tank: TankService,
     private toastCtrl: ToastController,
     private router: Router
-  ) { }
+  ) {
+        // this.form = this.formBuilder.group(
+    //   {
+    //     acceptTerms: [false, Validators.requiredTrue],
+    //     name: ['', [
+    //       Validators.required,
+    //       Validators.maxLength(30)]
+    //     ],
+    //     country: ['', [
+    //       Validators.required,
+    //       Validators.maxLength(25),
+    //       Validators.minLength(3)]
+    //     ],
+    //     gun: ['', [
+    //       Validators.required,
+    //       Validators.maxLength(25),
+    //       Validators.minLength(3)]
+    //     ],
+    //     manufacturer: ['', [
+    //       Validators.required,
+    //       Validators.maxLength(25),
+    //       Validators.minLength(3)]
+    //     ],
+    //     amount: ['', [
+    //       Validators.required,
+    //       Validators.maxLength(10),
+    //       Validators.minLength(3)]
+    //     ],
+    //     releaseDate: ['', [
+    //       Validators.required,
+    //       Validators.maxLength(4),
+    //       Validators.minLength(4)]
+    //     ],
+    //     pictureLink: ['',
+    //       Validators.required,
+    //     ],
+    //     role: ['', [
+    //       Validators.required,
+    //       Validators.maxLength(20),
+    //       Validators.minLength(5)]
+    //     ],
+    //     time: ['', [
+    //       Validators.required,
+    //       Validators.maxLength(4)]
+    //     ],
+    //     history: ['', [
+    //       Validators.required,
+    //       Validators.maxLength(500),
+    //       Validators.minLength(50)]
+    //     ],
+    //     available: ['', Validators.required]
+
+    //   }
+    // );
+  }
 
   ngOnInit() {
     this.tank = new Tank();
@@ -26,7 +82,7 @@ export class TankNewPage implements OnInit {
 
   async presentToast() {
     const toast = this.toastCtrl.create({
-      message: 'Nouveau Tank enregistré',
+      message: 'Nouveau véhicule enregistré',
       duration: 2000
     });
     (await toast).present().then(() => {
@@ -43,5 +99,8 @@ export class TankNewPage implements OnInit {
       this.presentToast();
     });
   }
+  // get errorControl(): { [key: string]: AbstractControl}{
+  //   return this.ionicForm.controls;
+  // }
 
 }
