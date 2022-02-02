@@ -16,7 +16,7 @@ Cependant il y a quelques défauts détaillé dans la section Fonctionnalités.
 
 Le CRUD pour la partie véhicule et la partie musée fonctionne.
 <br>
-Une gestions des erreurs pour le formulaire création d'un musée a été faites cependant elle génère une erreur, donc par précaution cette solution n'a pas été mise en place pour les autres formulaires mais la 
+Une gestion des erreurs pour le formulaire création d'un musée a été faites cependant elle génère une erreur, donc par précaution cette solution n'a pas été mise en place pour les autres formulaires mais la 
 logique est tout de même en commentaire dans les fichiers .ts des parties concernés.
 <br> 
 La fonctionnalité photos a été mise en place ainsi qu'un bouton share (dans la partie photo)
